@@ -1,0 +1,5 @@
+platform :ios, '7.0'
+
+target 'shareDemo'
+inhibit_all_warnings!
+pod 'SDWebImage','~> 3.7.3'
