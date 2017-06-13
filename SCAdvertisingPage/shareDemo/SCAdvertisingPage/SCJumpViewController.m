@@ -8,6 +8,7 @@
 
 #import "SCJumpViewController.h"
 #import "SCPageViewHeader.h"
+#import "SCDemoViewController.h"
 
 @interface SCJumpViewController ()
 
@@ -17,6 +18,16 @@
 
 @implementation SCJumpViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -25,18 +36,26 @@
 }
 
 - (void)pageViewInit {
-    _pageView = [[SCPageView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
-    // _pageView.pageURLString = @""; 这个里面可以写url的连接  动态改变广告页面
-    _pageView.blockSelect = ^{
-        NSLog(@"广告页被点击。。。跳转下载的地址。或者产品的官网都可以的！！！");
-    };
-    [self.view addSubview:_pageView];
-    
     WS(weakSelf);
+    
+    
     SCCountdownLabel *countdownLabel = [[SCCountdownLabel alloc] initWithFrame:CGRectMake(KScreenWidth - 80, 20, 60, 30)];
     countdownLabel.blockNewViewController = ^{
         [weakSelf removerSCPageView];
     };
+    
+    
+    _pageView = [[SCPageView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
+    // _pageView.pageURLString = @""; 这个里面可以写url的连接  动态改变广告页面
+    _pageView.blockSelect = ^{
+        NSLog(@"广告页被点击。。。跳转下载的地址。或者产品的官网都可以的！！！");
+        
+        countdownLabel.isStop = YES;
+        SCDemoViewController *demoVC = [[SCDemoViewController alloc] init];
+        [weakSelf.navigationController pushViewController:demoVC animated:YES];
+    };
+    [self.view addSubview:_pageView];
+    
     [_pageView addSubview:countdownLabel];
 }
 

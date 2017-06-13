@@ -28,10 +28,14 @@
     self.window.backgroundColor = [UIColor whiteColor];
     SCJumpViewController *jumpVC = [[SCJumpViewController alloc] init];
     jumpVC.blockMainViewController = ^{
-        weakSelf.window.rootViewController = [[ViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+        weakSelf.window.rootViewController = nav;
+        
     };
-    self.window.rootViewController = jumpVC;
-     [self.window makeKeyAndVisible];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:jumpVC];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

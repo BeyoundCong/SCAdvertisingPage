@@ -13,5 +13,6 @@ typedef void (^blockSelectJumpNewViewController)();
 @interface SCCountdownLabel : UILabel
 
 @property (nonatomic, copy) blockSelectJumpNewViewController blockNewViewController;
+@property (nonatomic, assign) BOOL isStop; //是否停止计时器
 
 @end

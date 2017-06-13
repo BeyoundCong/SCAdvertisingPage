@@ -17,13 +17,14 @@
 @implementation SCCountdownLabel
 
 - (void)dealloc {
-    
-    
+ 
 }
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _isStop = NO;
+        
         self.clipsToBounds = YES;
         self.layer.cornerRadius = 16;
         self.layer.shouldRasterize = YES;
@@ -47,26 +48,35 @@
 }
 
 #pragma mark --- 响应倒计时的方法
-- (void)handleSingleTap:(UITapGestureRecognizer *)sender
-{    
-    if (self.blockNewViewController) {
+- (void)handleSingleTap:(UITapGestureRecognizer *)sender {
+    
+    
+    if (_isStop == YES) {
+        
+    } else {
         [_timer invalidate];
         _timer = nil;
-        self.blockNewViewController();
+        if (self.blockNewViewController) {
+            self.blockNewViewController();
+        }
     }
 }
 
 - (void)jumpNewViewController {
     static int z = 0;
     z ++;
-    
     self.text = [NSString stringWithFormat:@"%d秒后跳转",5-z];
     
-    if (z == 5) {
-        if (self.blockNewViewController) {
-            [_timer invalidate];
-            _timer = nil;
-            self.blockNewViewController();
+    if (_isStop) {
+        
+    } else {
+        
+        if (z == 5) {
+            if (self.blockNewViewController) {
+                [_timer invalidate];
+                _timer = nil;
+                self.blockNewViewController();
+            }
         }
     }
 }

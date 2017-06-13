@@ -21,6 +21,7 @@
 		060C1ABA1D9CC78400D8D8FA /* SCJumpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 060C1AB91D9CC78400D8D8FA /* SCJumpViewController.m */; };
 		060C1ABC1D9CCA5500D8D8FA /* 1111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 060C1ABB1D9CCA5500D8D8FA /* 1111.jpg */; };
 		8EB23D35014EC60C50334813 /* libPods-shareDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAB6665DD775CA304DE060C /* libPods-shareDemo.a */; };
+		E95367FC1EEF881800796B8B /* SCDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95367FB1EEF881800796B8B /* SCDemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		320E24427C1DA4953A3721D5 /* Pods-shareDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shareDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-shareDemo/Pods-shareDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A7B783F5EA7CAF4F8135222F /* Pods-shareDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shareDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shareDemo/Pods-shareDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BDAB6665DD775CA304DE060C /* libPods-shareDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shareDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E95367FA1EEF881800796B8B /* SCDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDemoViewController.h; sourceTree = "<group>"; };
+		E95367FB1EEF881800796B8B /* SCDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				060C1AB51D9CB71700D8D8FA /* SCCountdownLabel.m */,
 				060C1AB81D9CC78400D8D8FA /* SCJumpViewController.h */,
 				060C1AB91D9CC78400D8D8FA /* SCJumpViewController.m */,
+				E95367FA1EEF881800796B8B /* SCDemoViewController.h */,
+				E95367FB1EEF881800796B8B /* SCDemoViewController.m */,
 			);
 			path = SCAdvertisingPage;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				060C1AB61D9CB71700D8D8FA /* SCCountdownLabel.m in Sources */,
 				060C19FD1D9A6C5700D8D8FA /* ViewController.m in Sources */,
 				060C19FA1D9A6C5700D8D8FA /* AppDelegate.m in Sources */,
+				E95367FC1EEF881800796B8B /* SCDemoViewController.m in Sources */,
 				060C1A031D9A6C5700D8D8FA /* shareDemo.xcdatamodeld in Sources */,
 				060C19F71D9A6C5700D8D8FA /* main.m in Sources */,
 				060C1AAE1D9BC91700D8D8FA /* SCPageView.m in Sources */,
