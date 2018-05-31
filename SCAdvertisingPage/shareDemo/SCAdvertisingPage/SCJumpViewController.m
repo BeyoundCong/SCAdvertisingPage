@@ -10,6 +10,9 @@
 #import "SCPageViewHeader.h"
 #import "SCDemoViewController.h"
 
+#define HEIGHT_NAVBAR    ([[UIScreen mainScreen ] bounds ].size.height == 812.0 ? 88 : 64)
+
+
 @interface SCJumpViewController ()
 
 @property (nonatomic, strong) SCPageView *pageView;
@@ -39,7 +42,7 @@
     WS(weakSelf);
     
     
-    SCCountdownLabel *countdownLabel = [[SCCountdownLabel alloc] initWithFrame:CGRectMake(KScreenWidth - 80, 20, 60, 30)];
+    SCCountdownLabel *countdownLabel = [[SCCountdownLabel alloc] initWithFrame:CGRectMake(KScreenWidth - 80, HEIGHT_NAVBAR - 44, 60, 30)];
     countdownLabel.blockNewViewController = ^{
         [weakSelf removerSCPageView];
     };
